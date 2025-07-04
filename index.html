@@ -59,14 +59,24 @@
       position: absolute;
       top: 120px;
       right: 10%;
-      max-height: 400px;
-      z-index: 10;
+      max-height: 200px;
+      max-width: 250px;
+      z-index: 1;
     }
 
     .logo-container img {
-      max-height: 100%;
-      width: auto;
+      width: 100%;
+      height: auto;
       object-fit: contain;
+    }
+
+    a {
+      color: green;
+      text-decoration: underline;
+    }
+
+    a:hover {
+      color: darkgreen;
     }
 
     @media (max-width: 600px) {
@@ -82,26 +92,9 @@
       }
 
       .logo-container img {
-        max-height: 200px;
+        max-height: 150px;
         width: 100%;
       }
     }
-
-    a {
-      color: green;
-      text-decoration: underline;
-    }
-
-    a:hover {
-      color: darkgreen;
-    }
   </style>
-</head>
-
-<body>
-  <header>
-    <h1>Vanguard Lawn Care LLC</h1>
-    <p>Professional, Reliable Lawn Care in Medford, Oregon</p>
-  </header>
-
-  <div class="logo-container" aria
+</head
