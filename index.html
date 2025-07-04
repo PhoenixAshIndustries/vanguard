@@ -1,9 +1,9 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="description" content="Reliable and affordable lawn care services in Medford, Oregon from Vanguard Lawn Care LLC. We offer mowing, edging, weeding, and more.">
   <title>Vanguard Lawn Care LLC</title>
   <style>
     body {
@@ -11,13 +11,16 @@
       font-family: sans-serif;
       background: #f4f4f4;
       color: #333;
+      position: relative;
     }
+
     header, footer {
       background: url('https://www.transparenttextures.com/patterns/grass.png') repeat;
-      color: Green;
+      color: green;
       padding: 1rem;
       text-align: center;
     }
+
     .container {
       padding: 2rem;
       max-width: 800px;
@@ -25,133 +28,80 @@
       background: white;
       box-shadow: 0 0 10px rgba(0,0,0,0.1);
     }
+
     h1 {
       margin-top: 0;
     }
+
     form {
       display: flex;
       flex-direction: column;
     }
+
     input, textarea, button {
       margin: 0.5rem 0;
       padding: 0.75rem;
       font-size: 1rem;
     }
+
     button {
       background-color: green;
       color: white;
       border: none;
       cursor: pointer;
     }
+
     button:hover {
       background-color: darkgreen;
     }
-<style>
-  body {
-    margin: 0;
-    font-family: sans-serif;
-    background: #f4f4f4;
-    color: #333;
-    position: relative; /* helps the logo position properly */
-  }
 
-  header, footer {
-    background: url('https://www.transparenttextures.com/patterns/grass.png') repeat;
-    color: Green;
-    padding: 1rem;
-    text-align: center;
-  }
+    .logo-container {
+      position: absolute;
+      top: 120px;
+      right: 10%;
+      max-height: 400px;
+      z-index: 10;
+    }
 
-  .container {
-    padding: 2rem;
-    max-width: 800px;
-    margin: auto;
-    background: white;
-    box-shadow: 0 0 10px rgba(0,0,0,0.1);
-  }
+    .logo-container img {
+      max-height: 100%;
+      width: auto;
+      object-fit: contain;
+    }
 
-  h1 {
-    margin-top: 0;
-  }
+    @media (max-width: 600px) {
+      .container {
+        padding: 1rem;
+      }
 
-  form {
-    display: flex;
-    flex-direction: column;
-  }
+      .logo-container {
+        position: static;
+        max-width: 100%;
+        margin: 1rem auto;
+        text-align: center;
+      }
 
-  input, textarea, button {
-    margin: 0.5rem 0;
-    padding: 0.75rem;
-    font-size: 1rem;
-  }
+      .logo-container img {
+        max-height: 200px;
+        width: 100%;
+      }
+    }
 
-  button {
-    background-color: green;
-    color: white;
-    border: none;
-    cursor: pointer;
-  }
+    a {
+      color: green;
+      text-decoration: underline;
+    }
 
-  button:hover {
-    background-color: darkgreen;
-  }
-
-  .logo-container {
-    position: absolute;
-    top: 120px;
-    right: 10%;
-    max-height: 400px;
-    z-index: 10;
-  }
-
-  .logo-container img {
-    max-height: 100%;
-    width: auto;
-    object-fit: contain;
-  }
-</style>
-
+    a:hover {
+      color: darkgreen;
+    }
+  </style>
 </head>
+
 <body>
   <header>
     <h1>Vanguard Lawn Care LLC</h1>
     <p>Professional, Reliable Lawn Care in Medford, Oregon</p>
   </header>
-<div class="logo-container">
-  <img src="https://raw.githubusercontent.com/PhoenixAshIndustries/vanguard/main/IMG_0964.JPG" alt="Vanguard Lawn Care Logo" />
-</div>
 
-
-  <div class="container">
-    <h2>Our Services</h2>
-    <ul>
-      <li>Mowing</li>
-      <li>Edging</li>
-      <li>Weeding</li>
-      <li>Blowing</li>
-    </ul>
-
-    <h2>Service Area</h2>
-    <p>Medford, Oregon and surrounding areas</p>
-
-    <h2>Contact Us</h2>
-    <p>Text or email preferred:</p>
-    <p>📧 <a href="mailto:VanguardLawn@gmail.com">VanguardLawn@gmail.com</a></p>
-    <p>📱 <a href="tel:+15418516226">(541) 851-6226</a></p>
-    <p><a href="https://www.facebook.com/profile.php?id=61562805812398" target="_blank">Facebook Page</a></p>
-
-    <h2>Book a Service</h2>
-    <form action="https://formspree.io/f/manjkkeb" method="POST">
-      <input type="text" name="name" placeholder="Your Name" required>
-      <input type="email" name="_replyto" placeholder="Your Email" required>
-      <input type="text" name="phone" placeholder="Your Phone Number">
-      <textarea name="message" placeholder="What service do you need?" required></textarea>
-      <button type="submit">Send Booking Request</button>
-    </form>
-  </div>
-
-  <footer>
-    <p>&copy; 2025 Vanguard Lawn Care LLC</p>
-  </footer>
-</body>
-</html>
+  <div class="logo-container" aria
