@@ -7,81 +7,103 @@
   <title>Vanguard Lawn Care LLC</title>
   <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
   <style>
-    * { box-sizing: border-box; }
+    * {
+      box-sizing: border-box;
+    }
+
     body {
       margin: 0;
       font-family: Arial, sans-serif;
       background: url('grass-bg.jpg') no-repeat center center fixed;
       background-size: cover;
       color: #1b5e20;
-      display: flex;
-      flex-direction: column;
-      min-height: 100vh;
     }
+
     header, footer {
       background: rgba(255, 255, 255, 0.8);
       text-align: center;
       padding: 2rem 1rem;
+      position: relative;
     }
+
     .logo-container {
       position: absolute;
       top: 1rem;
       right: 1rem;
       max-width: 120px;
     }
+
     .logo-container img {
       width: 100%;
       height: auto;
     }
+
     .container {
-      flex-grow: 1;
       max-width: 700px;
-      margin: auto;
-      background: rgba(255,255,255,0.9);
+      margin: 2rem auto;
+      background: rgba(255, 255, 255, 0.9);
       padding: 2rem;
-      border-radius: 8px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
       text-align: center;
+      border-radius: 10px;
     }
-    h1 { margin-top: 0; }
+
+    h1 {
+      margin-top: 0;
+    }
+
     .slogan {
       font-size: 1.5rem;
-      margin: 0.5rem 0 2rem;
+      margin-top: 1rem;
     }
-    .contact-info p {
-      margin: 0.75rem 0;
+
+    .contact-info {
       font-size: 1.1rem;
+      line-height: 1.6;
     }
+
+    a {
+      color: #1b5e20;
+      text-decoration: underline;
+    }
+
+    a:hover {
+      color: #145217;
+    }
+
     button {
       background-color: #1b5e20;
       color: white;
       border: none;
       padding: 1rem;
       font-size: 1.2rem;
-      cursor: pointer;
-      width: 100%;
       border-radius: 5px;
+      cursor: pointer;
       margin-top: 2rem;
     }
+
     button:hover {
       background-color: #145217;
     }
-    a { color: #1b5e20; text-decoration: underline; }
-    a:hover { text-decoration: none; }
+
     @media (max-width: 768px) {
       .logo-container {
         position: static;
-        max-width: 150px;
         margin: 1rem auto;
+        display: flex;
+        justify-content: center;
+        max-width: 150px;
       }
+
       .container {
         margin: 1rem;
-        padding: 1.5rem;
+        padding: 1rem;
       }
     }
   </style>
 </head>
 <body>
+
   <header>
     <div class="logo-container">
       <img src="your-logo.png" alt="Vanguard Lawn Care Logo">
@@ -104,7 +126,7 @@
     <p>&copy; 2025 Vanguard Lawn Care LLC</p>
   </footer>
 
-  <script src="https://assets.calendly.com/assets/external/widget.js"></script>
+  <script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
   <script>
     document.getElementById('scheduleButton').addEventListener('click', function () {
       Calendly.initPopupWidget({ url: 'https://calendly.com/vanguardlawn/lawn-care-appointment?hide_event_type_details=1' });
@@ -114,5 +136,6 @@
       window.addEventListener("message", listener);
     });
   </script>
+
 </body>
 </html>
