@@ -3,131 +3,100 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <meta name="description" content="Professional lawn care in Medford, Oregon. Vanguard Lawn Care LLC offers mowing, edging, weeding, and more.">
+  <meta name="description" content="Expert lawn care with Vanguard Lawn Care LLC in Medford, OR. Contact us for mowing, edging, weeding, and more.">
   <title>Vanguard Lawn Care LLC</title>
   <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
   <style>
-    * {
-      box-sizing: border-box;
-    }
-
+    * { box-sizing: border-box; }
     body {
       margin: 0;
       font-family: Arial, sans-serif;
-      background: #f4f4f4;
-      color: #333;
+      background: url('grass-bg.jpg') no-repeat center center fixed;
+      background-size: cover;
+      color: #1b5e20;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
     }
-
     header, footer {
-      background: url('https://www.transparenttextures.com/patterns/grass.png') repeat;
-      color: green;
+      background: rgba(255, 255, 255, 0.8);
       text-align: center;
       padding: 2rem 1rem;
-      position: relative;
     }
-
     .logo-container {
       position: absolute;
       top: 1rem;
       right: 1rem;
-      max-width: 100px;
+      max-width: 120px;
     }
-
     .logo-container img {
       width: 100%;
       height: auto;
     }
-
     .container {
-      max-width: 800px;
-      margin: 2rem auto;
-      background: white;
+      flex-grow: 1;
+      max-width: 700px;
+      margin: auto;
+      background: rgba(255,255,255,0.9);
       padding: 2rem;
-      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      border-radius: 8px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+      text-align: center;
     }
-
-    h1, h2 {
-      margin-top: 0;
+    h1 { margin-top: 0; }
+    .slogan {
+      font-size: 1.5rem;
+      margin: 0.5rem 0 2rem;
     }
-
-    ul {
-      padding-left: 20px;
-      list-style-type: disc;
+    .contact-info p {
+      margin: 0.75rem 0;
+      font-size: 1.1rem;
     }
-
     button {
-      background-color: green;
+      background-color: #1b5e20;
       color: white;
       border: none;
       padding: 1rem;
-      font-size: 1rem;
+      font-size: 1.2rem;
       cursor: pointer;
-      margin-top: 1rem;
       width: 100%;
+      border-radius: 5px;
+      margin-top: 2rem;
     }
-
     button:hover {
-      background-color: darkgreen;
+      background-color: #145217;
     }
-
-    a {
-      color: green;
-      text-decoration: underline;
-    }
-
-    a:hover {
-      color: darkgreen;
-    }
-
+    a { color: #1b5e20; text-decoration: underline; }
+    a:hover { text-decoration: none; }
     @media (max-width: 768px) {
       .logo-container {
         position: static;
-        margin: 1rem auto;
-        display: flex;
-        justify-content: center;
         max-width: 150px;
+        margin: 1rem auto;
       }
-
-      header, footer {
-        padding: 1.5rem 1rem;
-      }
-
       .container {
         margin: 1rem;
-        padding: 1rem;
+        padding: 1.5rem;
       }
     }
   </style>
 </head>
 <body>
-
   <header>
-    <div class="logo-container" aria-label="Company Logo">
-      <img src="IMG_0964.JPG" alt="Vanguard Lawn Care Logo" />
+    <div class="logo-container">
+      <img src="your-logo.png" alt="Vanguard Lawn Care Logo">
     </div>
     <h1>Vanguard Lawn Care LLC</h1>
-    <p>Professional, Reliable Lawn Care in Medford, Oregon</p>
+    <p class="slogan">Expert lawn care services you can trust, right here in Medford, Oregon.</p>
   </header>
 
   <div class="container">
-    <h2>Our Services</h2>
-    <ul>
-      <li>Mowing</li>
-      <li>Edging</li>
-      <li>Weeding</li>
-      <li>Blowing</li>
-    </ul>
+    <div class="contact-info">
+      <p>📧 <a href="mailto:vanguardlawn@gmail.com">vanguardlawn@gmail.com</a></p>
+      <p>📱 <a href="tel:+15418516226">(541) 851‑6226</a> (Text Preferred)</p>
+      <p><a href="https://www.facebook.com/profile.php?id=61562805812398" target="_blank">Visit Our Facebook Page</a></p>
+    </div>
 
-    <h2>Service Area</h2>
-    <p>Medford, Oregon and surrounding areas</p>
-
-    <h2>Contact Us</h2>
-    <p>📧 <a href="mailto:VanguardLawn@gmail.com">VanguardLawn@gmail.com</a></p>
-    <p>📱 <a href="tel:+15418516226">(541) 851-6226</a> (Text Preferred)</p>
-    <p><a href="https://www.facebook.com/profile.php?id=61562805812398" target="_blank">Visit Our Facebook Page</a></p>
-
-    <h2>Book a Service</h2>
-    <p>Click below to schedule an appointment using our live calendar:</p>
     <button id="scheduleButton">Schedule Now</button>
   </div>
 
@@ -135,22 +104,15 @@
     <p>&copy; 2025 Vanguard Lawn Care LLC</p>
   </footer>
 
-  <!-- Calendly Widget Script -->
-  <script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript"></script>
+  <script src="https://assets.calendly.com/assets/external/widget.js"></script>
   <script>
     document.getElementById('scheduleButton').addEventListener('click', function () {
-      Calendly.initPopupWidget({
-        url: 'https://calendly.com/vanguardlawn/lawn-care-appointment?hide_event_type_details=1'
-      });
-
-      window.CalendlyEventListener = function (e) {
-        if (e.data.event === "calendly.event_scheduled") {
-          window.location.href = "thank-you.html";
-        }
+      Calendly.initPopupWidget({ url: 'https://calendly.com/vanguardlawn/lawn-care-appointment?hide_event_type_details=1' });
+      const listener = e => {
+        if (e.data.event === "calendly.event_scheduled") window.location.href = "thank-you.html";
       };
-      window.addEventListener("message", window.CalendlyEventListener);
+      window.addEventListener("message", listener);
     });
   </script>
-
 </body>
 </html>
