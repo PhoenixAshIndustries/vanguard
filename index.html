@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <meta name="description" content="Professional lawn care in Medford, Oregon. Vanguard Lawn Care LLC offers mowing, edging, weeding, and more.">
   <title>Vanguard Lawn Care LLC</title>
+  <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
   <style>
     * {
       box-sizing: border-box;
@@ -54,22 +55,15 @@
       list-style-type: disc;
     }
 
-    form {
-      display: flex;
-      flex-direction: column;
-    }
-
-    input, textarea, select, button {
-      margin: 0.5rem 0;
-      padding: 0.75rem;
-      font-size: 1rem;
-    }
-
     button {
       background-color: green;
       color: white;
       border: none;
+      padding: 1rem;
+      font-size: 1rem;
       cursor: pointer;
+      margin-top: 1rem;
+      width: 100%;
     }
 
     button:hover {
@@ -133,32 +127,30 @@
     <p><a href="https://www.facebook.com/profile.php?id=61562805812398" target="_blank">Visit Our Facebook Page</a></p>
 
     <h2>Book a Service</h2>
-    <form action="https://formspree.io/f/manjkkeb" method="POST">
-      <input type="hidden" name="_redirect" value="thank-you.html">
-      <input type="text" name="name" placeholder="Your Full Name" required>
-      <input type="email" name="_replyto" placeholder="Your Email Address" required>
-      <input type="text" name="phone" placeholder="Phone Number" required>
-      <input type="text" name="address" placeholder="Service Address" required>
-      <input type="date" name="preferred_date" required>
-      <input type="time" name="preferred_time" required>
-      <select name="service_type" required>
-        <option value="" disabled selected>Select a Service</option>
-        <option value="mowing">Mowing</option>
-        <option value="edging">Edging</option>
-        <option value="weeding">Weeding</option>
-        <option value="blowing">Blowing</option>
-        <option value="full">Full Service</option>
-        <option value="other">Other</option>
-      </select>
-      <textarea name="message" placeholder="Additional Notes or Instructions"></textarea>
-      <button type="submit">Send Booking Request</button>
-    </form>
+    <p>Click below to schedule an appointment using our live calendar:</p>
+    <button id="scheduleButton">Schedule Now</button>
   </div>
 
   <footer>
     <p>&copy; 2025 Vanguard Lawn Care LLC</p>
   </footer>
 
+  <!-- Calendly Widget Script -->
+  <script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript"></script>
+  <script>
+    document.getElementById('scheduleButton').addEventListener('click', function () {
+      Calendly.initPopupWidget({
+        url: 'https://calendly.com/vanguardlawn/lawn-care-appointment?hide_event_type_details=1'
+      });
+
+      window.CalendlyEventListener = function (e) {
+        if (e.data.event === "calendly.event_scheduled") {
+          window.location.href = "thank-you.html";
+        }
+      };
+      window.addEventListener("message", window.CalendlyEventListener);
+    });
+  </script>
+
 </body>
 </html>
-
